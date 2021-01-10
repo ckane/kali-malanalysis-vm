@@ -31,7 +31,7 @@ apt install -y mesa-vulkan-drivers
 apt install -y docker docker-compose
 
 pip3 install -U pip
-pip install oletools yara-python frida volatility261 appmemdumper
+pip3 install oletools yara-python frida volatility261
 
 # Install FFDec
 wget https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version11.2.0/ffdec_11.2.0.deb
