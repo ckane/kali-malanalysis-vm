@@ -31,7 +31,19 @@ apt install -y mesa-vulkan-drivers
 apt install -y docker docker-compose
 
 pip3 install -U pip
-pip3 install oletools yara-python frida volatility261
+pip3 install oletools yara-python frida
+
+# Install Volatility 3
+mkdir -p ~/src/
+cd ~/src
+git clone https://github.com/volatilityfoundation/volatility3.git
+cd volatility3
+python3.9 setup.py build
+python3.9 setup.py install
+cd /usr/local/lib/python3.9/dist-packages/volatility-*.egg/volatility/symbols
+wget https://downloads.volatilityfoundation.org/volatility3/symbols/windows.zip
+wget https://downloads.volatilityfoundation.org/volatility3/symbols/mac.zip
+wget https://downloads.volatilityfoundation.org/volatility3/symbols/linux.zip
 
 # Install FFDec
 wget https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version11.2.0/ffdec_11.2.0.deb
